@@ -1,0 +1,53 @@
+
+ 
+    <br />
+    
+<% if user_signed_in? %>
+
+
+
+    <br />
+
+<h1 class="table">Employees List</h1>
+
+
+<div style="background-color: light-grey"  class="table table-striped table-bordered table-hover" id="employees">
+ <table class="table">
+
+    <tbody>
+
+    <tr>
+
+  <%   @employees.each do |employee| %>
+    <%= render employee %>
+    </tr>
+    </tbody>
+    <p>
+    
+      <%= link_to "Show this employee", employee %>
+      <%# <td><%= link_to 'Show', employee%></td>
+    </p>
+  <% end %>
+
+
+
+<%= link_to "New employee", new_employee_path, class:"btn btn-secondary" %>
+<%else%>
+
+<div style="background-color: light-grey">
+
+<h1>Welcome Aboard!&#128512;</h1>
+
+<br />
+
+<div class="text-success" id="timer">
+    <%= javascript_pack_tag 'Timer' %>
+    </div>
+</div>
+   <div id="footer">
+    <%= javascript_pack_tag 'Footer' %>
+    </div>
+ 
+<%end%>
+
+

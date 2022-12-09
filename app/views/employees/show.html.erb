@@ -1,0 +1,17 @@
+
+ <body style="background-color:lightgrey;box-sizing:border-box;">>
+<div class="jumbotron">
+  <h1 class="display-4"><%= @employee.first_name%>
+  <%= @employee.last_name%></h1>
+  <p class="lead"> <%= @employee.email%>
+ |  <%= @employee.phone%> |
+    <%= @employee.twitter%></p>
+    <br />
+   <%= link_to "Edit this employee", edit_employee_path(@employee), class:"btn btn-secondary" %> 
+
+  <%= link_to "Back to employees", employees_path, class:"btn btn-dark" %>
+ <br/>
+</div>
+
+ <%= button_to "Destroy this employee", @employee, method: :delete , class:"btn btn-danger"%>
+ </body>
